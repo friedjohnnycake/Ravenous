@@ -19,7 +19,7 @@ return <li key={sortByOptionValue}>{sortByOption}</li>
         return <div className="SearchBar">
         <div className="SearchBar-sort-options">
           <ul>
-            {renderSortByOptions()}
+            {this.renderSortByOptions()}
           </ul>
         </div>
         <div className="SearchBar-fields">
