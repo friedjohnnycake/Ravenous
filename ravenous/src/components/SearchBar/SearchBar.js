@@ -53,8 +53,12 @@ class SearchBar extends React.Component {
         this.setState({location: event.target.value})
     }
 
+    handleSearch() {
+      
+    }
+
     render() {
-        return <div className="SearchBar">
+        return <div searchYelp={this.searchYelp} className="SearchBar">
         <div className="SearchBar-sort-options">
           <ul>
             {this.renderSortByOptions()}
