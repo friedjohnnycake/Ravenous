@@ -1,0 +1,98 @@
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('./RavenousDesktop.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 25rem;
+}
+
+.search-bar-sort-options ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.22rem;
+  color: #ffffff;
+  list-style-type: none;
+}
+
+.search-bar-sort-options li {
+  cursor: pointer;
+  width: 4.33rem;
+  border-bottom: 1px solid #fff;
+  padding: 0 2.58rem .33rem 2.58rem;
+  line-height: 1.13;
+  text-align: center;
+  font-weight: 600;
+  font-size: .83rem;
+  transition: color .25s;
+}
+
+.search-bar-sort-options li:hover {
+  color: #d4cfcf;
+}
+
+.search-bar-sort-options li.active,
+.search-bar-sort-options li.active:hover {
+  border-bottom: 1px solid #f0c36c;
+  color: #f0c36c;
+}
+
+.search-bar-fields {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.88rem;
+}
+
+.search-bar-fields input {
+  width: 21rem;
+  padding: .66rem 1rem;
+  margin-right: 2.22rem;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  font-size: .77rem;
+  font-weight: 500;
+}
+
+.search-bar-fields input:last-child {
+  margin-right: 0;
+}
+
+.search-bar-submit {
+  text-align: center;
+}
+
+.search-bar-submit a {
+  border-radius: 4px;
+  padding: .72rem 1.7rem;
+  background-color: #cca353;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color .5s;
+}
+
+.search-bar-submit a:hover {
+  cursor: pointer;
+  background-color: #a7874b;
+}
+
+@media only screen and (max-width: 560px) {
+  .search-bar {
+    background-image: url('./RavenousMobile.jpg');
+  }
+
+  .search-bar-sort-options ul {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .search-bar-fields {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar-fields input {
+    margin-right: 0;
+    margin-bottom: .86rem;
+  }
+}
