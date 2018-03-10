@@ -2,13 +2,14 @@
 const apiKey = 'MwKeMvCJh7wsBof6HhrENPGDP1bJVERA6mSMtK2PZk1nx5nSOhMo0Q7Gc2iBxikq-_m0D_uvm7J5ASc7AKzpk7EwOKp6jLEZZHthoHxEVqAa_6C-pvGzLMJN6pCiWnYx';
 const Yelp = {
         search (term, location, sortBy){
-            return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, {headers: { {Authorization: `Bearer ${apiKey}`} }
+            return fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`, 
+                {headers: { 
+                    Authorization: `Bearer ${apiKey}`
+                }
                 }).then(response => {return response.json();
-                    console.log(response)
-                 ).then(jsonResponse => {
-                    if(jsonResponse.businesses){
-                        return jsonResponse.businesses.map(business => {
-                            return {
+                }).then(jsonResponse => {
+                    if(jsonResponse.businesses) {
+                        return jsonResponse.businesses.map(business => ({
                                 id: business.id,
                                 imageSrc: business.image_url,
                                 name: business.name,
@@ -18,13 +19,11 @@ const Yelp = {
                                 zipCode: business.location.zip_code,
                                 category: business.categories[0].title,
                                 rating: business.rating,
-                                reviewCount: business.review_count,
-                            },
-                            console.log(jsonResponse.businesses)
-                        });
-            }
-        });
-    }
-};
+                                reviewCount: business.review_count
+                            }));
+                        }
+                    });
+                }
+            };
 
 export default Yelp;
